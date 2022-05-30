@@ -12,7 +12,7 @@ const Footer = ({ img }) => {
               <a href="/">Home</a>
             </p>
             <p>
-              <a href="/">Things to do</a>
+              <a href="/">Wonders In India</a>
             </p>
             <p>
               <a href="/preview">Tourist Attraction</a>
