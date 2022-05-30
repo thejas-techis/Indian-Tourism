@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Imglike from "../../assets/img/Like_button.svg";
+import Imglike from "../../assets/img/heart.svg";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addFavourite,
   deleteFavourite,
 } from "../../reducks/favourites/operations";
 import { getFavourites } from "../../reducks/favourites/selectors";
-import heart from "../../assets/img/heart.svg";
+
 import { push } from "connected-react-router";
 
 const Attrthumb = ({ attraction }) => {
@@ -33,7 +33,7 @@ const Attrthumb = ({ attraction }) => {
           <img
             src={attraction.image}
             alt=""
-            onClick={() => dispatch(push( "/attractions/"))}
+            onClick={() => dispatch(push( "/attrplace/" + attraction.id))}
           />
         </div>
         <div className="subrow">

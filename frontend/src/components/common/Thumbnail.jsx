@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Imglike from "../../assets/img/Like_button.svg";
+import Imglike from "../../assets/img/heart.svg";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addFavourite,
   deleteFavourite,
 } from "../../reducks/favourites/operations";
 import { getFavourites } from "../../reducks/favourites/selectors";
-import heart from "../../assets/img/heart.svg";
+// import heart from "../../assets/img/heart.svg";
 import { push } from "connected-react-router";
 
 const Thumbnail = ({ place }) => {
@@ -25,9 +25,9 @@ const Thumbnail = ({ place }) => {
       setShowLikeButton(false);
     }
   }, [favourites]);
-  const likefn = () => {
-    document.getElementById("like").src = { heart };
-  };
+  // const likefn = () => {
+  //   document.getElementById("like").src = { heart };
+  // };
 
   return (
     <>
@@ -43,21 +43,22 @@ const Thumbnail = ({ place }) => {
           <h4>{place.name}</h4>
           <p>{place.description}</p>
           {
-            // <img
-            //   id="like"
-            //   src={Imglike}
-            //   onClick={() => {
-            //     setShowLikeButton(!showLikeButton);
-            //     if (showLikeButton) {
-            //       clickFavourite(place);
-            //     } else {
-            //       dispatch(deleteFavourite(place.id));
-            //     }
-            //   }}
-            //   style={{ backgroundColor: showLikeButton ? "white" : "red" }}
-            //   alt=""
-            // />
-            <img src={Imglike} id="like" onClick={likefn} />
+            <img
+              id="like"
+              src={Imglike}
+              onClick={() => {
+                setShowLikeButton(!showLikeButton);
+                if (showLikeButton) {
+                  clickFavourite(place);
+                } else {
+                  dispatch(deleteFavourite(place.id));
+                }
+              }}
+              style={{ backgroundColor: showLikeButton ? "white" : "red" }}
+              alt=""
+            />
+            // <img src={Imglike} id="like" style={{ backgroundColor: showLikeButton ? "white" : "red" }}
+            // alt="" />
           }
         </div>
       </div>

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Imglike from "../../assets/img/Like_button.svg";
+import Imglike from "../../assets/img/heart.svg";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addFavourite,
   deleteFavourite,
 } from "../../reducks/favourites/operations";
 import { getFavourites } from "../../reducks/favourites/selectors";
-import heart from "../../assets/img/heart.svg";
+// import wondersplace from "../common/Wondersplace";
 import { push } from "connected-react-router";
 
 const Wonthumb = ({ wonder }) => {
@@ -33,7 +33,7 @@ const Wonthumb = ({ wonder }) => {
           <img
             src={wonder.image}
             alt=""
-            onClick={() => dispatch(push( "/wonders/"))}
+            onClick={() => dispatch(push( "/wondersplace/" + wonder.id))}
           />
         </div>
         <div className="subrow">

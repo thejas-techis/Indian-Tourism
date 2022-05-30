@@ -5,8 +5,8 @@ import Favourites from '../../containers/Favourites'
 import { useDispatch } from 'react-redux'
 import { deleteFavourite } from '../../reducks/favourites/operations'
 import { addPlaceAction } from '../../reducks/places/actions'
-import heart from '../../assets/img/heart.svg'
-import like from '../../assets/img/Like_button.svg'
+
+import like from '../../assets/img/heart.svg'
 
 
 export const FavCard = ({favourite}) => {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { addFavourite } from "../../reducks/favourites/operations";
 import { getFavourites } from "../../reducks/favourites/selectors";
 import { useSelector, useDispatch } from "react-redux";
-import Imglike from "../../assets/img/Like_button.svg";
+import Imglike from "../../assets/img/heart.svg";
 import Places from "../../containers/Places";
 import { push } from "connected-react-router";
 import { deleteFavourite } from "../../reducks/favourites/operations";
