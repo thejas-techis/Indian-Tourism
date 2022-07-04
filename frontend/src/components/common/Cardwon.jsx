@@ -22,7 +22,9 @@ const Cardwon = ({ wonder }) => {
       setShowLikeButton(false);
     }
   }, [favourites]);
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
   return (
     <>
       <section class="firstpage">

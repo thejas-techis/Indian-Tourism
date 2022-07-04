@@ -10,7 +10,7 @@ var baseURL;
 //     baseURL = "http://127.0.0.1:8000";
 // }
 // baseURL = "https://ethiopian-tourist-backend.herokuapp.com/";
-// baseURL = "https://europeantrips-backend1.herokuapp.com";
+// baseURL = "https://backend-indiantourism.herokuapp.com/";
 baseURL = "http://127.0.0.1:8000";
 const api = axios.create({
   baseURL: baseURL,

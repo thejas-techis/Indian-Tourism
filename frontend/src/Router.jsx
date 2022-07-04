@@ -10,7 +10,8 @@ import Wonders from "./containers/Wonders";
 import Attractions from "./containers/Attractions";
 import Wondersplace from "./components/common/Wondersplace"; 
 import Attrplace from "./components/common/Attrplace";
-
+import Detailswonders from "./containers/Detailswonders";
+import Detailsattr from "./containers/Detailsattr";
 
 const Router = () => {
   return (
@@ -25,7 +26,8 @@ const Router = () => {
         <Route exact path={"/attractions"} component={Attractions} />
         <Route exact path={"/wondersplace/:id"} component={Wondersplace} />
         <Route exact path={"/attrplace/:id"} component={Attrplace} />
-        
+        <Route exact path={"/detailswonders"} component={Detailswonders} />
+        <Route exact path={"/detailsattr"} component={Detailsattr} />
       </Switch>
     </>
   );

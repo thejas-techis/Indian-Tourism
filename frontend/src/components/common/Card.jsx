@@ -22,9 +22,12 @@ const Card = ({ place }) => {
       setShowLikeButton(false);
     }
   }, [favourites]);
-
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
   return (
     <>
+
       <section class="firstpage">
         <img
           src={place.image}

@@ -15,6 +15,7 @@ from pathlib import Path
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -64,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -94,11 +96,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'd3ronv1b49f2p1',
-#         'USER': 'zfeemfkbvtcgwu',
+#         'NAME': 'dfcg329cldt6cf',
+#         'USER': 'qmdpcltxtnfljk',
 #         'PORT': 5432,
-#         'HOST': 'ec2-52-200-28-255.compute-1.amazonaws.com',
-#         'PASSWORD': '86e2e46c8f3c6a4606e744a30e5248294eba511a5dfb99e86dfcad5cc3d57037',
+#         'HOST': 'ec2-54-204-56-171.compute-1.amazonaws.com',
+#         'PASSWORD': '0bf63e60943f3e5c18759a7a2974eb20ee112ed5b9ac2ea193cd510924a7e171',
 #     }
 # }
 
@@ -151,7 +153,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+  os.path.join(BASE_DIR, 'static'),
+)
+
+
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

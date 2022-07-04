@@ -12,7 +12,17 @@ const Search = () => {
   };
 
   const submitAction = () => {
-    dispatch(push("/details?search=" + search));
+    let add = window.location.pathname;
+    if (add === "/") {
+      add = "details";
+    }
+    if (add === "/wonders") {
+      add = "detailswonders";
+    }
+    if (add === "/attractions") {
+      add = "detailsattr";
+    }
+    dispatch(push("/" + add + "?search=" + search));
   };
 
   return (
