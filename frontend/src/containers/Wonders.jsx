@@ -25,7 +25,7 @@ const Wonders = (props) => {
     
     useEffect(() => {
       dispatch(fetchWonders());
-      dispatch(fetchFromLocalStorage());
+      //dispatch(fetchFromLocalStorage());
 
     }, []);
     

@@ -3,9 +3,9 @@ import {fetchWondersAction, addWonderAction, deleteWonderAction} from "./actions
 
 const api = new API();
 
-export const fetchWonders = () => {
+export const fetchWonders = (search, category) => {
     return async (dispatch) => {
-        return api.getWonders()
+        return api.getWonders(search, category)
             .then((wonders) => {
                 dispatch(fetchWondersAction(wonders))
             }).catch((error) => {

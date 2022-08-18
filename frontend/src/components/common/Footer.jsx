@@ -12,17 +12,17 @@ const Footer = ({ img }) => {
               <a href="/">Home</a>
             </p>
             <p>
-              <a href="/">Wonders In India</a>
+              <a href="/wonders">Wonders In India</a>
             </p>
             <p>
-              <a href="/preview">Tourist Attraction</a>
+              <a href="/attractions">Tourist Attraction</a>
             </p>
             <p>
               <a href="/favorite">Favorite</a>
             </p>
           </div>
           <div class="address">
-            <p id="addr">Address</p>
+            <a href="https://goo.gl/maps/6PioVE8yrRCjF5wN7" target="_blank"><p id="addr">Address</p></a>
             <p>Head Office, Ministry of Tourism</p>
             <p>Transport Bhavan, Parliament Street</p>
             <p>New Delhi - 110001</p>

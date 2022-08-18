@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import Categorycard from '../components/common/Categorycard';
-import Attrthumb from '../components/common/Attrthumb';
+import { getAttractions } from '../reducks/attractions/selectors';
 import Footer from '../components/common/Footer';
 import Header from '../components/common/Header';
 import Map from '../components/common/Map';
 import Search from '../components/common/Search';
 import { fetchPlaces } from '../reducks/places/operations';
 import { getPlaces } from '../reducks/places/selectors';
-import { getAttractions } from '../reducks/attractions/selectors';
+import { fetchAttractions } from '../reducks/attractions/operations';
 import queryString from "query-string";
 import { fetchFromLocalStorage } from '../reducks/favourites/operations';
+
 
 
 
@@ -35,7 +36,7 @@ function Detailsattr() {
  }, []);
  useEffect(() => {
    if (search != null || category != null) {
-     dispatch(fetchPlaces(search, category));
+     dispatch(fetchAttractions(search, category));
    }
  }, [search, category]);
   return (
@@ -48,7 +49,7 @@ function Detailsattr() {
         <div class="heading1">Trips in India</div>
         <div class="grid">
         {attractions.map((attraction) => (
-              <Attrthumb attraction={attraction} />
+              <Categorycard place={attraction} />
               
             ))}
         </div>

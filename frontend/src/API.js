@@ -56,9 +56,21 @@ export default class API {
     return categories;
   };
 
-  getWonders = async () => {
+  getWonders = async (search, category) => {
+    let url = "/wonders/";
+    let query = new URLSearchParams();
+    if (search) {
+      query.append("search", search);
+    }
+    if (category) {
+      query.append("category", category);
+    }
+
+    if (query.toString() != "") {
+      url += "?" + query.toString();
+    }
     const wonders = await api
-      .get("/wonders/")
+      .get(url)
       .then((response) => {
         return response.data;
       })
@@ -68,9 +80,21 @@ export default class API {
     return wonders;
   };
 
-  getAttractions = async () => {
+  getAttractions = async (search,category) => {
+    let url = "/attractions/";
+    let query = new URLSearchParams();
+    if (search) {
+      query.append("search", search);
+    }
+    if (category) {
+      query.append("category", category);
+    }
+
+    if (query.toString() != "") {
+      url += "?" + query.toString();
+    }
     const attractions = await api
-      .get("/attractions/")
+      .get(url)
       .then((response) => {
         return response.data;
       })

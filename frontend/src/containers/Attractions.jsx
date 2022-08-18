@@ -26,7 +26,7 @@ const Attractions = (props) => {
     
     useEffect(() => {
       dispatch(fetchAttractions());
-      dispatch(fetchFromLocalStorage());
+      // dispatch(fetchFromLocalStorage());
     }, []);
     
 

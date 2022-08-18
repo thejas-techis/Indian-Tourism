@@ -3,9 +3,9 @@ import {fetchAttractionsAction, addAttractionAction, deleteAttractionAction} fro
 
 const api = new API();
 
-export const fetchAttractions = () => {
+export const fetchAttractions = (search, category) => {
     return async (dispatch) => {
-        return api.getAttractions()
+        return api.getAttractions(search, category)
             .then((attractions) => {
                 dispatch(fetchAttractionsAction(attractions))
             }).catch((error) => {

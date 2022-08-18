@@ -9,5 +9,5 @@ class AttractionList(generics.ListAPIView):
     queryset = Attraction.objects.all()
     serializer_class = AttractionSerializer
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
-    search_fields = ['name', 'description']
+    search_fields = ['name']
 

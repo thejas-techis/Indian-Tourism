@@ -18,6 +18,8 @@ const Wondersplace = (props) => {
   const selector = useSelector((state) => state);
   const wonders = getWonders(selector);
 
+  
+
   useEffect(() => {
     dispatch(fetchFromLocalStorage());
 
@@ -38,6 +40,7 @@ const Wondersplace = (props) => {
   return (
     <>
       <Header />
+      {console.log("sdfghjkhgfdsa", wonders)}
       <section class="section2">
         {/* <div class="gallery">
           <Search />
