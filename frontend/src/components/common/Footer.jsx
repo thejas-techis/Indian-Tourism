@@ -47,6 +47,7 @@ const Footer = ({ img }) => {
       <div class="copyright">
         <p>Techis.io©All Rights Reserved</p>
       </div>
+      
     </>
   );
 };
