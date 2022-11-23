@@ -1,5 +1,4 @@
 # Indian-Tourism
-test
 ```
 Forum App, with a frontend built in React & Redux and a backend built in Django API.
 ```
